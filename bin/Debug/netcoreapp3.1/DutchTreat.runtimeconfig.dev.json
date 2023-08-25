@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Chaity\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Chaity\\.nuget\\packages"
+    ]
+  }
+}

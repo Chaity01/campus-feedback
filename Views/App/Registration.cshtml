@@ -1,0 +1,92 @@
+﻿@model Student 
+@{
+  ViewBag.Title = "Registration";
+}
+@*creating a model using asp dot net*@
+@section Scripts {
+  <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+  <script src="~/js/validation.js"></script>@*adding a vlidation scrip*@
+}
+<div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+      <div class="card card-body bg-dark shadow text-white">
+        <form method="post" onsubmit="return validateForm()">@*using a validation form for registration*@
+      
+          <div asp-validation-summary="ModelOnly "> </div>
+
+          <div class="form-group">
+            <div class=" row mt-2">
+                <div class="col-3">
+                            <label asp-for="UniversityId">University Id:</label>
+                </div>
+                <div class="col-9">
+                            <input asp-for="UniversityId" id="universityId" class="form-control" />
+                            <span id="universityIdValidationMsg" class="text-danger"></span>
+                            <span asp-validation-for="UniversityId"></span>@*validate university id*@
+                </div>
+            </div>
+           
+          </div>
+      
+          <div class="form-group">
+               <div class="row mt-2">
+                  <div class="col-3">
+                            <label asp-for="Email">Email:</label>
+                  </div>
+                  <div class="col-9">
+                            <input type="email" id="email" asp-for="Email" class="form-control" />
+                            <span id="emailValidationMessage" class="text-danger"></span>
+                            <span asp-validation-for="Email" class="text-danger"></span>@*default validation*@
+                  </div>
+              </div>
+          </div>
+
+                <div class="form-group">
+                    <div class="row mt-2">
+                        <div class="col-3">
+                            <label>Phone:</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" name="phone" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" id="phone" class="form-control" />
+                            <span id="phoneValidationMessage" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+      
+          <div class="form-group">
+                    <div class="row mt-2">
+                  <div class=" col-3">
+                            <label asp-for="FirstName">First Name:</label>
+                  </div>
+                  <div class="col-9">
+
+                            <input type="text" asp-for="FirstName" id="firstName" class="form-control" />
+                            <span id="firstNameValidationMsg" class="text-danger"></span>
+                            <span asp-validation-for="FirstName" class="text-danger"></span>@*validation first name*@
+                  </div>
+              </div>
+           
+          </div>
+
+          <div class="form-group">
+              <div class="row mt-2">
+                  <div class="col-3">
+                            <label asp-for="LastName">Last Name:</label>
+                  </div>
+                  <div class="col-9">
+                            <input type="text" asp-for="LastName" id="lastName" class="form-control" />
+                            <span id="lastNameValidationMsg" class="text-danger"></span>
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="form-group mt-3 align-content-center">
+            <button type="submit" class="btn btn-outline-success">Registartion & Survey</button>
+            <div class="text-success">@ViewBag.UserMessage</div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

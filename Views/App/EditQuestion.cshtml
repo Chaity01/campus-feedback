@@ -1,0 +1,42 @@
+﻿@model DutchTreat.Data.Entities.Question
+
+@{
+    ViewData["Title"] = "EditQuestion";
+}
+<div class="container-fluid">
+    <div class="container mt-5">
+        <h1>Edit Question</h1>
+
+
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="card card-body bg-dark text-white">
+                    <form asp-action="EditQuestion">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check mt-5">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="IsShowInHomepage" /> @Html.DisplayNameFor(model => model.IsShowInHomepage)
+                            </label>
+                        </div>
+                        <div class="form-group mt-5">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="QuestionList">Back to List</a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

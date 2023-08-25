@@ -1,0 +1,66 @@
+﻿@model IList<Question>
+<div id="question-carousel" class="carousel" data-interval="false">
+    <div class="container-fluid">
+        <div class="container mt-5">
+            <div class="carousel-inner">
+                @foreach (var p in Model)
+                {
+                    if (Model.IndexOf(p).Equals(0))
+                    {
+                        @:<div class="carousel-item active first">
+                    }
+                    else if (Model.IndexOf(p).Equals(Model.Count-1))
+                    {
+                        @:<div class="carousel-item final">
+                    }
+                    else
+                    {
+                        @:<div class="carousel-item">
+                    }
+                    
+                        <h2 data-id="@(p.Id)" class="title">@(p.Title)</h2>
+                            <form class="d-flex justify-content-between " onchange="showSubmit()">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="1"> Poor
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="2"> Average
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="3"> Good
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="4"> Excellent
+                                </label>
+                            </form>
+                    if (Model.IndexOf(p).Equals(0))
+                    {
+                        @:</div>
+                    }
+                    else
+                    {
+                        @:</div>
+                    }
+                }
+            </div>
+            <div class="container-fluid mt-5">
+                <div class="container d-flex justify-content-between">
+                    <div>
+                        <button type="button" data-bs-target="#question-carousel" data-bs-slide="prev" class="btn btn-outline-secondary previous">Previous</button>
+                    </div>
+   
+                    <div>
+                        <button type="button" data-bs-target="#question-carousel" data-bs-slide="next" class="btn btn-outline-primary next">Next</button>
+                    </div>
+
+                </div>
+
+                <div class="d-grid mt-5">
+                    <button type="button" class="btn btn-outline-success btn-block submit-button" onclick="this.disabled=true; this.value='Submitting…';submitAll()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>

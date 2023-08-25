@@ -1,0 +1,26 @@
+{
+  "Colors": {
+    "Favorite": "Blue"
+  },
+  "ConnectionStrings": {
+    "DutchConnectionString": "Data Source=DESKTOP-0L26GMU;Database=DutchTreatDb;Integrated Security=True;MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  },
+  "Tokens": {
+    "Key": "a;sdlkfja; lsdkfj ;alksdfj ;alksdfj; aiefj;lskij;fldsk",
+    "Issuer": "localhost",
+    "Audience": "localhost"
+  },
+  "MailSettings": {
+    "Mail": "jannat.chaity95@gmail.com",
+    "DisplayName": "Campus Feedback",
+    "Password": "wpkxqeipmupvzmjx",
+    "Host": "smtp.gmail.com",
+    "Port": 587
+  }
+}

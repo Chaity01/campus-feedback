@@ -1,0 +1,49 @@
+﻿@*Question list will be show here *@
+@model IEnumerable<DutchTreat.Data.Entities.Question>
+
+@{
+    ViewData["Title"] = "Questions List";
+}
+
+
+<div class="container-fluid">
+    <div class="container mt-5">
+        <h1>Question List</h1>
+
+        <p>
+            <a asp-action="AddQuestion">Add New</a>@* Add New is set in the controller*@
+        </p>
+        <br/>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsShowInHomepage)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsShowInHomepage)
+                        </td>
+                        <td>
+                            <a asp-action="EditQuestion" asp-route-id="@item.Id">Edit</a>
+                            @*@Html.ActionLink("Delete","DeleteQuestion",new{i = item.Id})*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

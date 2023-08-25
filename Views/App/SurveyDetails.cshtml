@@ -1,0 +1,26 @@
+﻿@model List<CampusFeedback.ViewModels.FeedbackView>
+
+@{
+    ViewData["Title"] = "Survey Details";
+}
+<div class="container-fluid">
+    <div class="container mt-5">
+        <h3>Survey Details of "@Model.First().Email"</h3>
+
+        @foreach(var item in Model)
+        {
+            <div class="row mt-5">
+                <h4>@item.QuestionTitle</h4>
+                <p><b>Answer : </b> @item.ValueString</p>
+            </div>
+        }
+
+
+        <div>
+            <a asp-action="StudentList">Back to List</a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
