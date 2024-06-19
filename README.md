@@ -1,4 +1,4 @@
-<b>C#, .Net, HTML, JavaScript, MSSQL</b>
+C#,.Net, HTML, JavaScript, MSSQL<br/>
 <ul>
 <li>Its user-friendly interface, crafted with HTML and JavaScript, allows for easy submission of feedback. The system's
 backbone is powered by C# and .NET. Including MSSQL further enhances the system's ability to manage large
